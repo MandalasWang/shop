@@ -14,7 +14,13 @@
 				+ oid;
 
 	}
-	
+	function deleteorder(oid) {
+		if (confirm("您确认要收货吗？")) {
+			//确认删除			
+			window.location.href = "${pageContext.request.contextPath}/Admin?method=DelOrderByoid&oid="+oid;
+					
+		}
+	}
 	
 </script>
 </HEAD>
@@ -65,7 +71,7 @@
 								</td>
 							
 								 <td style="CURSOR: hand; HEIGHT: 22px" align="center" width="8%">
-								<a href="${pageContext.request.contextPath}/Admin?method=DelOrderByoid&oid=${order.oid}" >
+								 <a href="javascript:void(0);" onclick="deleteorder('${order.oid}')">								
 									<button >确认收货</button></a>
 								</td>
 							</tr>

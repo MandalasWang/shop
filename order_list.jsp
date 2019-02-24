@@ -6,7 +6,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>会员登录</title>
+<title>我的订单</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -47,17 +47,19 @@ body {
 							<th>价格</th>
 							<th>数量</th>
 							<th>小计</th>
+							<th>是否付款</th>
 						</tr>
 						<c:forEach items="${order.orderItems }" var="orderItem">
 						
 							<tr class="active">
-								<td width="60" width="40%">
+								<td width="60" width="30%">
 									<img src="${pageContext.request.contextPath }/${orderItem.product.pimage}" width="70" height="60">
 								</td>
-								<td width="30%"><a target="_blank">${orderItem.product.pname}</a></td>
-								<td width="20%">￥${orderItem.product.shop_price}</td>
+								<td width="20%"><a target="_blank">${orderItem.product.pname}</a></td>
+								<td width="10%">￥${orderItem.product.shop_price}</td>
 								<td width="10%">${orderItem.count}</td>
-								<td width="15%"><span class="subtotal">￥${orderItem.subtotal }</span></td>
+								<td width="10%"><span class="subtotal">￥${orderItem.subtotal }</span></td>
+								<td width="20%">货到付款<td>
 							</tr>
 						
 						</c:forEach>

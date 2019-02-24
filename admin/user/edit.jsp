@@ -32,7 +32,7 @@
 						<input type="text" name="password" id="userAction_save_do_logonpassword" value="${user.password }"/>
 					</td>
 					<td width="8%" align="right" bgColor="#f5fafe" >
-						是否授权登录：
+						是否授权登录后台：
 					</td>
 					<td  bgColor="#ffffff"  width="10%">
 						<select name="state">

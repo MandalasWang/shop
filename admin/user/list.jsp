@@ -49,7 +49,7 @@
 							<td align="center" width="12%">序号</td>
 							<td align="center" width="13%">用戶名</td>						
 							<td width="7%" align="center">密码</td>
-							<td align="center" width="9%">是否已授权</td>
+							<td align="center" width="9%">是否授权登录</td>
 							<td width="7%" align="center">编辑</td>
 							<td width="7%" align="center">删除</td>
 						</tr>
@@ -75,8 +75,8 @@
 										border="0" style="CURSOR: hand">
 								</a></td>
 
-								<td align="center" style="HEIGHT: 22px"><a href="javascript:void(0);" onclick="deleteuser('${user.uid}')"> <img
-										src="${pageContext.request.contextPath}/images/i_del.gif"
+								<td align="center" style="HEIGHT: 22px"><a href="javascript:void(0);" onclick="deleteuser('${user.uid}')">
+								 <img src="${pageContext.request.contextPath}/images/i_del.gif"
 										width="16" height="16" border="0" style="CURSOR: hand">
 								</a></td>
 							</tr>

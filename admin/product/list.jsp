@@ -14,10 +14,9 @@
 		window.location.href = "${pageContext.request.contextPath}/admin/product/add.jsp";
 	}
 	function delproduct(pid) {
-		var isdel = confirm("您确认要删除吗？");
-		if (isdel) {
-			//确认删除
-			window.localtion.href = "${pageContext.request.contextPath}/Admin?method=DelproductBypid&pid="
+		if (confirm("您确认要删除吗？")) {
+			//确认删除			
+			window.location.href= "${pageContext.request.contextPath}/Admin?method=DelproductBypid&pid="
 					+ pid;
 		}
 	}

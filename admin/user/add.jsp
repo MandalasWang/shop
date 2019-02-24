@@ -20,7 +20,7 @@
 				</tr>
 
 				<tr>
-					<td width="8%" align="left" bgColor="#f5fafe" >
+					<td width="8%" align="right" bgColor="#f5fafe" >
 						用户名称：
 					</td>
 					<td  bgColor="#ffffff" width="10%" >
