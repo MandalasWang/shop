@@ -44,6 +44,10 @@ public class Productservlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//è¯·æ±‚å†…å®¹è½¬ç 
+		request.setCharacterEncoding("UTF-8");
+		//å›ä¼ å‘Šè¯‰æµè§ˆå™¨å±•ç¤ºç¼–ç 
+		response.setContentType("text/html;charset=UTF-8");
 		String methodName = request.getParameter("method");
 		if ("category".equals(methodName)) {
 			category(request, response);
@@ -120,7 +124,7 @@ public class Productservlet extends HttpServlet {
 		List<Orders> list = orderservice.getorderlistByuid(uid);
 		//System.out.println(list);
 		if(list==null){
-			response.getWriter().write("Äú»¹Î´ÏÂµ¥,Çë¸Ï¿ìÈ¥ÏÂµ¥°É£¡");
+			response.getWriter().write("æ‚¨è¿˜æœªä¸‹å•,è¯·èµ¶å¿«å»ä¸‹å•å§ï¼");
 		}
 		Orders order = new Orders();
 		for(Orders orders : list){
@@ -155,10 +159,10 @@ public class Productservlet extends HttpServlet {
 		// System.out.println(price+".."+list+cid);
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -172,7 +176,7 @@ public class Productservlet extends HttpServlet {
 				}
 			}
 		}
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
@@ -192,10 +196,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -210,7 +214,7 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
@@ -231,10 +235,10 @@ public class Productservlet extends HttpServlet {
 		// System.out.println(price+".."+list+cid);
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -248,7 +252,7 @@ public class Productservlet extends HttpServlet {
 				}
 			}
 		}
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
@@ -268,10 +272,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -286,7 +290,7 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
@@ -306,10 +310,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -324,12 +328,12 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
 
-	// ¸ù¾İµçÄÔµÄ¼Û¸ñÇø¼ä»ñÈ¡µçÄÔ
+	// æ ¹æ®ç”µè„‘çš„ä»·æ ¼åŒºé—´è·å–ç”µè„‘
 	private void getcomputerByPrice(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
@@ -346,10 +350,10 @@ public class Productservlet extends HttpServlet {
 		// System.out.println(price+".."+list+cid);
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -363,12 +367,12 @@ public class Productservlet extends HttpServlet {
 				}
 			}
 		}
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
 
-	// ¸ù¾İµçÄÔÆ·ÅÆ²éÑ¯µçÄÔ
+	// æ ¹æ®ç”µè„‘å“ç‰ŒæŸ¥è¯¢ç”µè„‘
 	private void getConputerBypname(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		String pname = request.getParameter("pname");
@@ -385,10 +389,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -403,12 +407,12 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
 
-	// ¸ù¾İÊÖ»ú¼Û¸ñ²éÑ¯ÊÖ»ú
+	// æ ¹æ®æ‰‹æœºä»·æ ¼æŸ¥è¯¢æ‰‹æœº
 	private void getmobileByPrice(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
@@ -426,10 +430,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -443,12 +447,12 @@ public class Productservlet extends HttpServlet {
 				}
 			}
 		}
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
 
-	// ¸ù¾İÊÖ»úµÄÆ·ÅÆ²éÑ¯ÊÖ»ú
+	// æ ¹æ®æ‰‹æœºçš„å“ç‰ŒæŸ¥è¯¢æ‰‹æœº
 	private void getmobileBypname(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		request.setCharacterEncoding("UTF-8");
@@ -466,10 +470,10 @@ public class Productservlet extends HttpServlet {
 
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -484,7 +488,7 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
@@ -509,13 +513,13 @@ public class Productservlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// Ê¹ÓÃjsonµÄ×ª»»¹¤¾ß½«¶ÔÏó»ò¼¯ºÏ×ª³Éjson¸ñÊ½µÄ×Ö·û´®
+		// ä½¿ç”¨jsonçš„è½¬æ¢å·¥å…·å°†å¯¹è±¡æˆ–é›†åˆè½¬æˆjsonæ ¼å¼çš„å­—ç¬¦ä¸²
 		/*
 		 * JSONArray fromObject = JSONArray.fromObject(productList); String
 		 * string = fromObject.toString(); System.out.println(string);
 		 */
 		return pnamelist;
-		// ÀûÓÃjson²å¼ş½«»ñµÃµÄÊı¾İ×ª»»ÎªjsonÊı¾İ×Ö·û´®¸ñÊ½
+		// åˆ©ç”¨jsonæ’ä»¶å°†è·å¾—çš„æ•°æ®è½¬æ¢ä¸ºjsonæ•°æ®å­—ç¬¦ä¸²æ ¼å¼
 
 	}
 
@@ -525,26 +529,26 @@ public class Productservlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	// »ñÈ¡µ¼º½ÌõĞÅÏ¢
+	// è·å–å¯¼èˆªæ¡ä¿¡æ¯
 	protected void category(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Categoryservice categoryservice = new Categoryservice();
-		// »ñÈ¡µ¼º½ÌõĞÅÏ¢
+		// è·å–å¯¼èˆªæ¡ä¿¡æ¯
 		List<Category> categories = categoryservice.getcategory();
-		// ´æÈërequestÓòÖĞ
+		// å­˜å…¥requeståŸŸä¸­
 		request.getServletContext().setAttribute("categories", categories);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
 
-	// »ñÈ¡Ê×Ò³µÄÉÌÆ·ĞÅÏ¢
+	// è·å–é¦–é¡µçš„å•†å“ä¿¡æ¯
 	protected void index(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Productservice productservice = new Productservice();
 
-		// »ñÈ¡ÈÈÃÅÉÌÆ·
+		// è·å–çƒ­é—¨å•†å“
 		List<product> hotProducts = productservice.findHotProducts();
-		// »ñÈ¡×îĞÂÉÌÆ·
+		// è·å–æœ€æ–°å•†å“
 		List<product> newproducts = productservice.findNewProducts();
 
 		request.setAttribute("hotProducts", hotProducts);
@@ -554,11 +558,11 @@ public class Productservlet extends HttpServlet {
 
 	}
 
-	// »ñÈ¡ÉÌÆ·ÁĞ±í
+	// è·å–å•†å“åˆ—è¡¨
 	protected void product_list(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		// »ñÈ¡cid
+		// è·å–cid
 		String cid = request.getParameter("cid");
 		String currentPageStr = request.getParameter("currentPage");
 		if (currentPageStr == null)
@@ -572,10 +576,10 @@ public class Productservlet extends HttpServlet {
 		// System.out.println(pageBean.getList());
 		request.setAttribute("pageBean", pageBean);
 		request.setAttribute("cid", cid);
-		// ¶¨ÒåÒ»¸ö¼ÇÂ¼ÀúÊ·ÉÌÆ·ĞÅÏ¢µÄ¼¯ºÏ
+		// å®šä¹‰ä¸€ä¸ªè®°å½•å†å²å•†å“ä¿¡æ¯çš„é›†åˆ
 		List<product> historyProductList = new ArrayList<product>();
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øÃû×Ö½ĞpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦åå­—å«pidsçš„cookie
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
@@ -590,25 +594,25 @@ public class Productservlet extends HttpServlet {
 			}
 		}
 
-		// ½«ÀúÊ·¼ÇÂ¼µÄ¼¯ºÏ·Åµ½ÓòÖĞ
+		// å°†å†å²è®°å½•çš„é›†åˆæ”¾åˆ°åŸŸä¸­
 		request.setAttribute("historyProductList", historyProductList);
 
 		request.getRequestDispatcher("/product_list.jsp").forward(request, response);
 
 	}
 
-	// »ñÈ¡ÉÌÆ·ÏêÏ¸ĞÅÏ¢
+	// è·å–å•†å“è¯¦ç»†ä¿¡æ¯
 	protected void product_info(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		// »ñÈ¡Êı¾İ
+		// è·å–æ•°æ®
 		String pimage = request.getParameter("pimage");
 		String cid = request.getParameter("cid");
 
-		// »ñµÃÒª²éÑ¯µÄÉÌÆ·µÄpid
+		// è·å¾—è¦æŸ¥è¯¢çš„å•†å“çš„pid
 		String pid = request.getParameter("pid");
 
-		// ´«µİ¸øservice²ã
+		// ä¼ é€’ç»™serviceå±‚
 		Productservice productservice = new Productservice();
 		Categoryservice categoryservice = new Categoryservice();
 		Category category = categoryservice.getcategoryBycid(cid);
@@ -616,36 +620,36 @@ public class Productservlet extends HttpServlet {
 		request.setAttribute("category", category);
 		request.setAttribute("product", product);
 
-		// »ñµÃ¿Í»§¶ËĞ¯´øcookie---»ñµÃÃû×ÖÊÇpidsµÄcookie
+		// è·å¾—å®¢æˆ·ç«¯æºå¸¦cookie---è·å¾—åå­—æ˜¯pidsçš„cookie
 		String pids = pid;
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
 				if ("pids".equals(cookie.getName())) {
 					pids = cookie.getValue();
-					// 1-3-2 ±¾´Î·ÃÎÊÉÌÆ·pidÊÇ8----->8-1-3-2
-					// 1-3-2 ±¾´Î·ÃÎÊÉÌÆ·pidÊÇ3----->3-1-2
-					// 1-3-2 ±¾´Î·ÃÎÊÉÌÆ·pidÊÇ2----->2-1-3
-					// ½«pids²ğ³ÉÒ»¸öÊı×é
+					// 1-3-2 æœ¬æ¬¡è®¿é—®å•†å“pidæ˜¯8----->8-1-3-2
+					// 1-3-2 æœ¬æ¬¡è®¿é—®å•†å“pidæ˜¯3----->3-1-2
+					// 1-3-2 æœ¬æ¬¡è®¿é—®å•†å“pidæ˜¯2----->2-1-3
+					// å°†pidsæ‹†æˆä¸€ä¸ªæ•°ç»„
 					String[] split = pids.split("-");// {3,1,2}
 					List<String> asList = Arrays.asList(split);// [3,1,2]
 					LinkedList<String> list = new LinkedList<String>(asList);// [3,1,2]
-					// ÅĞ¶Ï¼¯ºÏÖĞÊÇ·ñ´æÔÚµ±Ç°pid
+					// åˆ¤æ–­é›†åˆä¸­æ˜¯å¦å­˜åœ¨å½“å‰pid
 					if (list.contains(pid)) {
-						// °üº¬µ±Ç°²é¿´ÉÌÆ·µÄpid
+						// åŒ…å«å½“å‰æŸ¥çœ‹å•†å“çš„pid
 						list.remove(pid);
 						list.addFirst(pid);
 					} else {
-						// ²»°üº¬µ±Ç°²é¿´ÉÌÆ·µÄpid Ö±½Ó½«¸Ãpid·Åµ½Í·ÉÏ
+						// ä¸åŒ…å«å½“å‰æŸ¥çœ‹å•†å“çš„pid ç›´æ¥å°†è¯¥pidæ”¾åˆ°å¤´ä¸Š
 						list.addFirst(pid);
 					}
-					// ½«[3,1,2]×ª³É3-1-2×Ö·û´®
+					// å°†[3,1,2]è½¬æˆ3-1-2å­—ç¬¦ä¸²
 					StringBuffer sb = new StringBuffer();
 					for (int i = 0; i < list.size() && i < 7; i++) {
 						sb.append(list.get(i));
 						sb.append("-");// 3-1-2-
 					}
-					// È¥µô3-1-2-ºóµÄ-
+					// å»æ‰3-1-2-åçš„-
 					pids = sb.substring(0, sb.length() - 1);
 				}
 			}
@@ -657,9 +661,9 @@ public class Productservlet extends HttpServlet {
 
 	}
 
-	// »ñµÃ¹ºÎï³µÉÌÆ·ĞÅÏ¢
+	// è·å¾—è´­ç‰©è½¦å•†å“ä¿¡æ¯
 	protected void cart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// »ñÈ¡Ç°Ì¨´«À´µÄÊı¾İ
+		// è·å–å‰å°ä¼ æ¥çš„æ•°æ®
 		request.setCharacterEncoding("UTF-8");
 		// String pid = request.getParameter("pid");
 		//
@@ -671,73 +675,73 @@ public class Productservlet extends HttpServlet {
 
 		Productservice service = new Productservice();
 
-		// »ñµÃÒª·Åµ½¹ºÎï³µµÄÉÌÆ·µÄpid
+		// è·å¾—è¦æ”¾åˆ°è´­ç‰©è½¦çš„å•†å“çš„pid
 		String pid = request.getParameter("pid");
-		// »ñµÃproduct¶ÔÏó
+		// è·å¾—productå¯¹è±¡
 		product product = service.findProductByPid(pid);
 
-		// »ñµÃ¸ÃÉÌÆ·µÄ¹ºÂòÊıÁ¿
+		// è·å¾—è¯¥å•†å“çš„è´­ä¹°æ•°é‡
 		String bNum = request.getParameter("buyNum");
 		int buyNum = Integer.parseInt(bNum);
 
-		// ¼ÆËãĞ¡¼Æ
+		// è®¡ç®—å°è®¡
 		double subtotal = product.getShop_price() * buyNum;
-		// ·â×°CartItem
+		// å°è£…CartItem
 		CartItem item = new CartItem();
 		item.setProduct(product);
 		item.setBuyNum(buyNum);
 		item.setSubtotal(subtotal);
 
-		// »ñµÃ¹ºÎï³µ---ÅĞ¶ÏÊÇ·ñÔÚsessionÖĞÒÑ¾­´æÔÚ¹ºÎï³µ
+		// è·å¾—è´­ç‰©è½¦---åˆ¤æ–­æ˜¯å¦åœ¨sessionä¸­å·²ç»å­˜åœ¨è´­ç‰©è½¦
 		Cart cart = (Cart) session.getAttribute("cart");
 		if (cart == null) {
 			cart = new Cart();
 		}
 
-		// ½«¹ºÎïÏî·Åµ½³µÖĞ---keyÊÇpid
-		// ÏÈÅĞ¶Ï¹ºÎï³µÖĞÊÇ·ñÒÑ½«°üº¬´Ë¹ºÎïÏîÁË ----- ÅĞ¶ÏkeyÊÇ·ñÒÑ¾­´æÔÚ
-		// Èç¹û¹ºÎï³µÖĞÒÑ¾­´æÔÚ¸ÃÉÌÆ·----½«ÏÖÔÚÂòµÄÊıÁ¿ÓëÔ­ÓĞµÄÊıÁ¿½øĞĞÏà¼Ó²Ù×÷
+		// å°†è´­ç‰©é¡¹æ”¾åˆ°è½¦ä¸­---keyæ˜¯pid
+		// å…ˆåˆ¤æ–­è´­ç‰©è½¦ä¸­æ˜¯å¦å·²å°†åŒ…å«æ­¤è´­ç‰©é¡¹äº† ----- åˆ¤æ–­keyæ˜¯å¦å·²ç»å­˜åœ¨
+		// å¦‚æœè´­ç‰©è½¦ä¸­å·²ç»å­˜åœ¨è¯¥å•†å“----å°†ç°åœ¨ä¹°çš„æ•°é‡ä¸åŸæœ‰çš„æ•°é‡è¿›è¡Œç›¸åŠ æ“ä½œ
 		Map<String, CartItem> cartItems = cart.getCartItems();
 
 		double newsubtotal = 0.0;
 
 		if (cartItems.containsKey(pid)) {
-			// È¡³öÔ­ÓĞÉÌÆ·µÄÊıÁ¿
+			// å–å‡ºåŸæœ‰å•†å“çš„æ•°é‡
 			CartItem cartItem = cartItems.get(pid);
 			int oldBuyNum = cartItem.getBuyNum();
 
-			// »ñÈ¡Ã¿Ò»ÏîµÄÉÌÆ·¹ºÂòÊıÁ¿£¬²¢ÇÒ½«ËûÃÇ´Ó¿â´æ¼õÈ¥
+			// è·å–æ¯ä¸€é¡¹çš„å•†å“è´­ä¹°æ•°é‡ï¼Œå¹¶ä¸”å°†ä»–ä»¬ä»åº“å­˜å‡å»
 			service.updateproductcount(pid, oldBuyNum);
 
 			oldBuyNum += buyNum;
 			cartItem.setBuyNum(oldBuyNum);
 			cart.setCartItems(cartItems);
-			// ĞŞ¸ÄĞ¡¼Æ
-			// Ô­À´¸ÃÉÌÆ·µÄĞ¡¼Æ
+			// ä¿®æ”¹å°è®¡
+			// åŸæ¥è¯¥å•†å“çš„å°è®¡
 			double oldsubtotal = cartItem.getSubtotal();
-			// ĞÂÂòµÄÉÌÆ·µÄĞ¡¼Æ
+			// æ–°ä¹°çš„å•†å“çš„å°è®¡
 			newsubtotal = buyNum * product.getShop_price();
 			cartItem.setSubtotal(oldsubtotal + newsubtotal);
 
 		} else {
-			// Èç¹û³µÖĞÃ»ÓĞ¸ÃÉÌÆ·
+			// å¦‚æœè½¦ä¸­æ²¡æœ‰è¯¥å•†å“
 			cart.getCartItems().put(product.getPid(), item);
 			newsubtotal = buyNum * product.getShop_price();
 
 			// System.out.println(product .getCounts());
 		}
 
-		// ¼ÆËã×Ü¼Æ
+		// è®¡ç®—æ€»è®¡
 		double total = cart.getTotal() + newsubtotal;
 		cart.setTotal(total);
 
-		// ½«³µÔÙ´Î·ÃÎÊsession
+		// å°†è½¦å†æ¬¡è®¿é—®session
 		session.setAttribute("cart", cart);
-		// Ö±½ÓÌø×ªµ½¹ºÎï³µÒ³Ãæ
+		// ç›´æ¥è·³è½¬åˆ°è´­ç‰©è½¦é¡µé¢
 		response.sendRedirect(request.getContextPath() + "/cart.jsp");
 	}
 
-	// »ñÈ¡¹ºÎï³µ¶©µ¥ĞÅÏ¢
+	// è·å–è´­ç‰©è½¦è®¢å•ä¿¡æ¯
 	protected void submitOrder(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
@@ -745,57 +749,57 @@ public class Productservlet extends HttpServlet {
 		user user = (user) session.getAttribute("user");
 
 		if (user != null) {
-			// Ä¿µÄ£º·â×°ºÃÒ»¸öOrder¶ÔÏó ´«µİ¸øservice²ã
+			// ç›®çš„ï¼šå°è£…å¥½ä¸€ä¸ªOrderå¯¹è±¡ ä¼ é€’ç»™serviceå±‚
 			Orders order = new Orders();
 
-			// 1¡¢private String oid;//¸Ã¶©µ¥µÄ¶©µ¥ºÅ
+			// 1ã€private String oid;//è¯¥è®¢å•çš„è®¢å•å·
 			String oid = UUID.randomUUID().toString();
 			order.setOid(oid);
 
-			// 2¡¢private Date ordertime;//ÏÂµ¥Ê±¼ä
+			// 2ã€private Date ordertime;//ä¸‹å•æ—¶é—´
 			Date date = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			String orderdate = format.format(date);
 			order.setOrdertime(orderdate);
 
-			// 3¡¢private double total;//¸Ã¶©µ¥µÄ×Ü½ğ¶î
-			// »ñµÃsessionÖĞµÄ¹ºÎï³µ
+			// 3ã€private double total;//è¯¥è®¢å•çš„æ€»é‡‘é¢
+			// è·å¾—sessionä¸­çš„è´­ç‰©è½¦
 			Cart cart = (Cart) session.getAttribute("cart");
 			double total = cart.getTotal();
 			order.setTotal(total);
 
-			// 4¡¢private int state;//¶©µ¥Ö§¸¶×´Ì¬ 1´ú±íÒÑ¸¶¿î 0´ú±íÎ´¸¶¿î
+			// 4ã€private int state;//è®¢å•æ”¯ä»˜çŠ¶æ€ 1ä»£è¡¨å·²ä»˜æ¬¾ 0ä»£è¡¨æœªä»˜æ¬¾
 			order.setState(0);
 
-			// 5¡¢private String address;//ÊÕ»õµØÖ·
+			// 5ã€private String address;//æ”¶è´§åœ°å€
 			order.setAddress(null);
 
-			// 6¡¢private String name;//ÊÕ»õÈË
+			// 6ã€private String name;//æ”¶è´§äºº
 			order.setName(null);
 
-			// 7¡¢private String telephone;//ÊÕ»õÈËµç»°
+			// 7ã€private String telephone;//æ”¶è´§äººç”µè¯
 			order.setTelephone(null);
 
-			// 8¡¢private User user;//¸Ã¶©µ¥ÊôÓÚÄÄ¸öÓÃ»§
+			// 8ã€private User user;//è¯¥è®¢å•å±äºå“ªä¸ªç”¨æˆ·
 			order.setUser(user);
 
-			// 9¡¢¸Ã¶©µ¥ÖĞÓĞ¶àÉÙ¶©µ¥ÏîList<OrderItem> orderItems = new
+			// 9ã€è¯¥è®¢å•ä¸­æœ‰å¤šå°‘è®¢å•é¡¹List<OrderItem> orderItems = new
 			// ArrayList<OrderItem>();
-			// »ñµÃ¹ºÎï³µÖĞµÄ¹ºÎïÏîµÄ¼¯ºÏmap
+			// è·å¾—è´­ç‰©è½¦ä¸­çš„è´­ç‰©é¡¹çš„é›†åˆmap
 			Map<String, CartItem> cartItems = cart.getCartItems();
-			// ´«µİÊı¾İµ½service²ã
+			// ä¼ é€’æ•°æ®åˆ°serviceå±‚
 			Productservice service = new Productservice();
 			for (Map.Entry<String, CartItem> entry : cartItems.entrySet()) {
-				// È¡³öÃ¿Ò»¸ö¹ºÎïÏî
+				// å–å‡ºæ¯ä¸€ä¸ªè´­ç‰©é¡¹
 				CartItem cartItem = entry.getValue();
-				// ´´½¨ĞÂµÄ¶©µ¥Ïî
+				// åˆ›å»ºæ–°çš„è®¢å•é¡¹
 				OrderItems orderItem = new OrderItems();
-				// 1)private String itemid;//¶©µ¥ÏîµÄid
+				// 1)private String itemid;//è®¢å•é¡¹çš„id
 				orderItem.setItemid(UUID.randomUUID().toString());
-				// 2)private int count;//¶©µ¥ÏîÄÚÉÌÆ·µÄ¹ºÂòÊıÁ¿
+				// 2)private int count;//è®¢å•é¡¹å†…å•†å“çš„è´­ä¹°æ•°é‡
 				orderItem.setCount(cartItem.getBuyNum());
 				//System.out.println(cartItem.getProduct().getPid()+"..."+cartItem.getBuyNum()+"..."+cartItem.getProduct().getCounts());
-				// ¼õÈ¥ÉÌÆ·µÄÊıÁ¿
+				// å‡å»å•†å“çš„æ•°é‡
 				/*service.updateproductcount(cartItem.getProduct().getPid(),
 				 cartItem.getBuyNum());					
 					service.updateproductByid(cartItem.getProduct().getPid(), cartItem.getBuyNum());				
@@ -803,29 +807,29 @@ public class Productservlet extends HttpServlet {
 				*///System.out.println(cartItem.getProduct().getPid()+ cartItem.getBuyNum());			
 							
 				// System.out.println(cartItem.getProduct().getCounts());
-				// 3)private double subtotal;//¶©µ¥ÏîĞ¡¼Æ
+				// 3)private double subtotal;//è®¢å•é¡¹å°è®¡
 				orderItem.setSubtotal(cartItem.getSubtotal());
-				// 4)private Product product;//¶©µ¥ÏîÄÚ²¿µÄÉÌÆ·
+				// 4)private Product product;//è®¢å•é¡¹å†…éƒ¨çš„å•†å“
 				orderItem.setProduct(cartItem.getProduct());
-				// 5)private Order order;//¸Ã¶©µ¥ÏîÊôÓÚÄÄ¸ö¶©µ¥
+				// 5)private Order order;//è¯¥è®¢å•é¡¹å±äºå“ªä¸ªè®¢å•
 				orderItem.setOrder(order);
 			   
 	            List<OrderItems> orderItemslist = new LinkedList<>();
 	            orderItemslist.add(orderItem);
 	            request.getSession().setAttribute("list", orderItemslist);
-				// ½«¸Ã¶©µ¥ÏîÌí¼Óµ½¶©µ¥µÄ¶©µ¥Ïî¼¯ºÏÖĞ
+				// å°†è¯¥è®¢å•é¡¹æ·»åŠ åˆ°è®¢å•çš„è®¢å•é¡¹é›†åˆä¸­
 				order.getOrderItems().add(orderItem);
 			}
 
-			// order¶ÔÏó·â×°Íê±Ï
+			// orderå¯¹è±¡å°è£…å®Œæ¯•
 
 			service.submitOrder(order);
             //System.out.println(order);
 			session.setAttribute("order", order);
-			//ÀûÓÃoid²éÑ¯orderitems¼¯ºÏ
+			//åˆ©ç”¨oidæŸ¥è¯¢orderitemsé›†åˆ
 			
 
-			// Ò³ÃæÌø×ª
+			// é¡µé¢è·³è½¬
 			response.sendRedirect(request.getContextPath() + "/order_info.jsp");
 		} else {
 			response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -833,30 +837,30 @@ public class Productservlet extends HttpServlet {
 
 	}
 
-	// Çå¿Õ¹ºÎï³µ
+	// æ¸…ç©ºè´­ç‰©è½¦
 	public void clearCart(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.removeAttribute("cart");
 
-		// Ìø×ª»Øcart.jsp
+		// è·³è½¬å›cart.jsp
 		response.sendRedirect(request.getContextPath() + "/cart.jsp");
 
 	}
 
-	// É¾³ıµ¥Ò»ÉÌÆ·
+	// åˆ é™¤å•ä¸€å•†å“
 	public void delProFromCart(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// »ñµÃÒªÉ¾³ıµÄitemµÄpid
+		// è·å¾—è¦åˆ é™¤çš„itemçš„pid
 		String pid = request.getParameter("pid");
-		// É¾³ısessionÖĞµÄ¹ºÎï³µÖĞµÄ¹ºÎïÏî¼¯ºÏÖĞµÄitem
+		// åˆ é™¤sessionä¸­çš„è´­ç‰©è½¦ä¸­çš„è´­ç‰©é¡¹é›†åˆä¸­çš„item
 		HttpSession session = request.getSession();
 		Cart cart = (Cart) session.getAttribute("cart");
 		if (cart != null) {
 			Map<String, CartItem> cartItems = cart.getCartItems();
-			// ĞèÒªĞŞ¸Ä×Ü¼Û
+			// éœ€è¦ä¿®æ”¹æ€»ä»·
 			cart.setTotal(cart.getTotal() - cartItems.get(pid).getSubtotal());
-			// É¾³ı
+			// åˆ é™¤
 			cartItems.remove(pid);
 			cart.setCartItems(cartItems);
 
@@ -864,11 +868,11 @@ public class Productservlet extends HttpServlet {
 
 		session.setAttribute("cart", cart);
 
-		// Ìø×ª»Øcart.jsp
+		// è·³è½¬å›cart.jsp
 		response.sendRedirect(request.getContextPath() + "/cart.jsp");
 	}
 
-	// È·ÈÏ¶©µ¥---¸üĞÂÊÕ»õÈËĞÅÏ¢+ÔÚÏßÖ§¸¶
+	// ç¡®è®¤è®¢å•---æ›´æ–°æ”¶è´§äººä¿¡æ¯+åœ¨çº¿æ”¯ä»˜
 	public void confirmOrder(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -888,7 +892,7 @@ public class Productservlet extends HttpServlet {
 			}
 			
 		}
-		// 1¡¢¸üĞÂÊÕ»õÈËĞÅÏ¢
+		// 1ã€æ›´æ–°æ”¶è´§äººä¿¡æ¯
 		Orders order = new Orders();
 		order.setAddress(request.getParameter("address"));
 		order.setName(request.getParameter("name"));
@@ -899,7 +903,7 @@ public class Productservlet extends HttpServlet {
 		String orderdate = format.format(date);
 		order.setOrdertime(orderdate);	
 
-		//»ñÈ¡´æÔÚsessionÓòÖĞµÄorder¶ÔÏó
+		//è·å–å­˜åœ¨sessionåŸŸä¸­çš„orderå¯¹è±¡
 		Orders orders = (Orders) request.getSession().getAttribute("order");
 		order.setOid(orders.getOid());
 		order.setTotal(orders.getTotal());
