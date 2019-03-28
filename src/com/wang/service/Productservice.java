@@ -101,7 +101,16 @@ public class Productservice {
 		}
 		return product;
 	}
-
+	public com.wang.domain.product findproByandpname(String pname) {
+		product product = null;
+		try {
+			product = productdao.findproByandpname(pname);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return product;
+	}
 	// 根据pid获取购物车商品的信息
 	public com.wang.domain.product getcartproduct(String pid) {
 		product product = null;

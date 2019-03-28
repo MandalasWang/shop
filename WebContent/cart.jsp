@@ -104,9 +104,9 @@
 	
 				<div style="margin-right:130px;">
 					<div style="text-align:right;">
-						<em style="color:#ff6600;">
-					登录后确认是否享有优惠&nbsp;&nbsp;
-				</em> 赠送积分: <em style="color:#ff6600;">${cart.total }</em>&nbsp; 商品金额: <strong style="color:#ff6600;">￥${cart.total }元</strong>
+						
+					
+				&nbsp; 商品金额: <strong style="color:#ff6600;">￥${cart.total }元</strong>
 					</div>
 					<div style="text-align:right;margin-top:10px;margin-bottom:10px;">
 						<a href="javascript:;" onclick="clearCart()" id="clear" class="clear">清空购物车</a>

@@ -492,12 +492,10 @@ public class Productservlet extends HttpServlet {
 		request.setAttribute("historyProductList", historyProductList);
 
 	}
-
 	private void searchBypname(HttpServletRequest request, HttpServletResponse response) {
-		String pname = request.getParameter("pname");
-		product product = null;
+		String pname = request.getParameter("pname");	
 		Productservice productservice = new Productservice();
-		product = productservice.getproductBypname(pname);
+		product product = productservice.getproductBypname(pname);
 
 		request.setAttribute("product", product);
 

@@ -377,16 +377,18 @@ public class AdminServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	private boolean adminlogincheck(HttpServletRequest request, HttpServletResponse response) {
+	private boolean adminlogincheck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean issucessfullogin = false;
 		String name = request.getParameter("username");
 		String pass = request.getParameter("password");
 		Userservice userservice = new Userservice();
 		Administrantor admin = userservice.checkadminloginBynameAndpass(name, pass);
-		if(name.equals("")||pass.equals("")){
+		if(null == admin){
 			return false;
 		}
-		else if (admin.getUsername().equals(name) && admin.getPassword().equals(pass) ) {
+		if(name.equals("")||pass.equals("")){
+			return false;
+		}else if (admin.getUsername().equals(name) && admin.getPassword().equals(pass) ) {
 			request.getSession().setAttribute("manager", admin);
 			issucessfullogin = true;
 		}
@@ -500,21 +502,25 @@ public class AdminServlet extends HttpServlet {
 						}else{
 							//文件上传项 获得文件名称 获得文件的内容
 							String fileName = item.getName();
+							//获取项目里面的upload包的绝对路径
 							String path = this.getServletContext().getRealPath("upload");
-							System.out.println(path);
+							//获取该项的文件输入流
 							InputStream in = item.getInputStream();
+							//创建该图片/文件的输出流
 							OutputStream out = new FileOutputStream(path+"/"+fileName);//I:/xxx/xx/xxx/xxx.jpg
+							//使用io工具类将图片/文件拷贝到服务器
 							IOUtils.copy(in, out);
+							//关闭流
 							in.close();
 							out.close();
-							item.delete();
-							
+							item.delete();	
+							//将上传图片/文件放入map备用
 							map.put("pimage", "upload/"+fileName);
 							
 						}
 						
 					}
-					
+					//调用工具类封装实体
 					BeanUtils.populate(product, map);
 					//是否product对象封装数据完全
 					//private String pid;

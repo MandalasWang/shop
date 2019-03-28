@@ -59,7 +59,12 @@ public class Productdao {
 		return runner.query(sql, new BeanHandler<product>(product.class), pimage);
 
 	}
+    //根据pname获取商品的信息
+	public product findproByandpname(String pname) throws SQLException {
+		String sql = "select * from product where pname = ? ";
+		return runner.query(sql, new BeanHandler<product>(product.class), pname);
 
+	}
 	// 根据Pid获取购物车商品的信息
 	public product getcartproduct(String pid) throws SQLException {
 		String sql = "select * from product where pid = ?";

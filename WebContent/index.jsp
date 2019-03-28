@@ -267,7 +267,7 @@ li { list-style: none; }
 				</c:forEach>
 				</ul>
 				
-				<form class="navbar-form navbar-right" role="search" action="${pageContext.request.contextPath }/product?method=searchBypname" >
+				<form class="navbar-form navbar-right" role="search" action="${pageContext.request.contextPath }/product?method=searchBypname" method=>
 					<div class="form-group" style="position: relative">
 						<input type="text" class="form-control" placeholder="Search"
 							id="search" onkeyup="searchword(this)" name="pname">
@@ -379,20 +379,20 @@ li { list-style: none; }
 					<h2>热门商品&nbsp;&nbsp;<img src="img/title2.jpg"/></h2>
 				</div>
 				<div class="col-md-2" style="border:1px solid #E7E7E7;border-right:0;padding:0;">
-					<img src="products/hao/big01.jpg" width="205" height="404" style="display: inline-block;"/>
+					<img src="products/hao/big01.jpg" width="205" height="415" style="display: inline-block;"/>
 				</div>
 				<div class="col-md-10">
 					<div class="col-md-6" style="text-align:center;height:200px;padding:0px;">
-						<a href="product_info.htm">
+						<a href="javascript:void(0);">
 							<img src="products/hao/middle01.jpg" width="516px" height="200px" style="display: inline-block;">
 						</a>
 					</div>
 				<c:forEach items="${hotProducts }" var="hotpro">
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
+					<div class="col-md-2" style="text-align:center;height:218px;padding:10px 0px;">
 						<a href="${pageContext.request.contextPath }/product?method=product_info&pimage=${hotpro.pimage}">
 							<img src="${pageContext.request.contextPath }/${hotpro.pimage }" width="130" height="130" style="display: inline-block;">
 						</a>
-						<p><a href="product_info.html" style='color:#666'>${hotpro.pname }</a></p>
+						<p><a href="javascript:void(0);" style='color:#666'>${hotpro.pname }</a></p>
 						<p><font color="#E4393C" style="font-size:16px">&yen;${hotpro.shop_price }</font></p>
 					</div>
 	           </c:forEach>
@@ -412,11 +412,11 @@ li { list-style: none; }
 					<h2>最新商品&nbsp;&nbsp;<img src="img/title2.jpg"/></h2>
 				</div>
 				<div class="col-md-2" style="border:1px solid #E7E7E7;border-right:0;padding:0;">
-					<img src="products/hao/big01.jpg" width="205" height="404" style="display: inline-block;"/>
+					<img src="products/hao/big01.jpg" width="205" height="415" style="display: inline-block;"/>
 				</div>
 				<div class="col-md-10">
 					<div class="col-md-6" style="text-align:center;height:200px;padding:0px;">
-						<a href="product_info.htm">
+						<a href="javascript:void(0);">
 							<img src="products/hao/middle01.jpg" width="516px" height="200px" style="display: inline-block;">
 						</a>
 					</div>
@@ -426,7 +426,7 @@ li { list-style: none; }
 						<a href="${pageContext.request.contextPath }/product?method=product_info&pimage=${newpro.pimage}">
 							<img src="${pageContext.request.contextPath }/${newpro.pimage }" width="130" height="130" style="display: inline-block;">
 						</a>
-						<p><a href="product_info.html" style='color:#666'>${newpro.pname }</a></p>
+						<p><a href="javascript:void(0);" style='color:#666'>${newpro.pname }</a></p>
 						<p><font color="#E4393C" style="font-size:16px">&yen;${newpro.shop_price }</font></p>
 					</div>
 	           </c:forEach>
